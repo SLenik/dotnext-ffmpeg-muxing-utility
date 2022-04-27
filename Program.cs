@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using FFmpeg.AutoGen;
 
 namespace FFmpegSimpleMuxer
 {
@@ -6,7 +8,8 @@ namespace FFmpegSimpleMuxer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ffmpeg.RootPath = $".{Path.DirectorySeparatorChar}ffmpeg-lib";
+            Console.WriteLine(ffmpeg.avformat_configuration());
         }
     }
 }
