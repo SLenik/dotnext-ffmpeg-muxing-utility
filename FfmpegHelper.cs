@@ -8,6 +8,14 @@ namespace FFmpegSimpleMuxer
     static unsafe class FfmpegHelper
     {
         /// <summary>
+        /// Test if <paramref name="value"/> contains <paramref name="flag"/>
+        /// </summary>
+        public static bool HasFlag(this int value, int flag)
+        {
+            return (value & flag) > 0;
+        }
+
+        /// <summary>
         /// Converts pointer to byte array to managed string.
         /// </summary>
         /// <param name="pByteArray">Pointer to byte array with non-unicode chars.</param>
